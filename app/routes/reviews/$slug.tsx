@@ -19,8 +19,7 @@ import {
   TitleH1,
 } from "~/styles/styles";
 
-import pkg from "@apollo/client";
-const { gql } = pkg;
+import { gql } from "@apollo/client";
 
 export const handle = {
   breadcrumb: ({ params }: any) => (

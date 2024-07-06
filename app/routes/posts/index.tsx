@@ -12,8 +12,7 @@ import {
   DateP,
 } from "~/styles/styles";
 import moment from "moment";
-import pkg from "@apollo/client";
-const { gql } = pkg;
+import { gql } from "@apollo/client";
 
 export const handle = {
   breadcrumb: () => (

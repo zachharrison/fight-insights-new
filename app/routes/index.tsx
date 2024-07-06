@@ -12,8 +12,8 @@ import {
 import { styled } from "styled-components";
 import { PostProps } from "../components/Post";
 import { Review, ReviewProps } from "~/components/ReviewCardView";
-import pkg from "@apollo/client";
-const { gql } = pkg;
+
+import { gql } from "@apollo/client";
 
 export async function loader() {
   const BlogPostsQuery = gql`
