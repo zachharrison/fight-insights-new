@@ -1,4 +1,4 @@
-import styles from "~/styles/index.css?url";
+// import styles from "~/styles/index.css?url";
 import { Navbar } from "./components/Navbar";
 import {
   ThemeProvider,
@@ -18,7 +18,7 @@ import {
   LiveReload,
 } from "@remix-run/react";
 
-export const links = () => [{ rel: "stylesheet", href: styles }];
+// export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export const meta: MetaFunction = () => {
   return [
@@ -38,9 +38,12 @@ export const meta: MetaFunction = () => {
 
 // Return the theme from the session storage using the loader
 export const loader: LoaderFunction = async ({ request }) => {
-  const { getTheme } = await themeSessionResolver(request);
+  // const { getTheme } = await themeSessionResolver(request);
+  // return {
+  //   theme: getTheme(),
+  // };
   return {
-    theme: getTheme(),
+    theme: "dark",
   };
 };
 
@@ -50,9 +53,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function AppWithProviders() {
   const data = useLoaderData();
   return (
-    <ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
-      <App />
-    </ThemeProvider>
+    // <ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
+    <App />
+    // </ThemeProvider>
   );
 }
 
@@ -66,13 +69,13 @@ function App() {
       <head>
         <Meta />
         <Links />
-        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
-        {typeof document === "undefined" ? "__STYLES__" : null}
+        {/* <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
+        {typeof document === "undefined" ? "__STYLES__" : null} */}
       </head>
       <body>
         <Navbar />
         <div style={{ marginTop: "100px" }}>
-          <ol>
+          {/* <ol>
             {matches
               .filter((match) => match.handle && match.handle.breadcrumb)
               .map((match, index) => (
@@ -80,7 +83,7 @@ function App() {
                   {match.handle.breadcrumb(match)}
                 </li>
               ))}
-          </ol>
+          </ol> */}
           <Outlet />
           <ScrollRestoration />
           <LiveReload />

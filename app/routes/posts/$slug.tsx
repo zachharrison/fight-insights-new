@@ -1,29 +1,29 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { client } from "../../lib/apollo";
-import {
-  TitleH1,
-  ArticleContainer,
-  ArticleImage,
-  BreadcrumbContainerDiv,
-  BreadcrumbSpan,
-  SubduedP,
-} from "../../styles/styles";
-import { styled } from "styled-components";
+// import {
+//   TitleH1,
+//   ArticleContainer,
+//   ArticleImage,
+//   BreadcrumbContainerDiv,
+//   BreadcrumbSpan,
+//   SubduedP,
+// } from "../../styles/styles";
+// import { styled } from "styled-components";
 import { gql } from "@apollo/client";
 
-export const handle = {
-  breadcrumb: ({ params }: any) => (
-    <BreadcrumbContainerDiv>
-      <SubduedP>
-        <Link to="/">Home</Link>
-        {" > "}
-        <Link to="/posts">Blog</Link>
-        {" > "}
-        <BreadcrumbSpan>{params.slug}</BreadcrumbSpan>
-      </SubduedP>
-    </BreadcrumbContainerDiv>
-  ),
-};
+// export const handle = {
+//   breadcrumb: ({ params }: any) => (
+//     <BreadcrumbContainerDiv>
+//       <SubduedP>
+//         <Link to="/">Home</Link>
+//         {" > "}
+//         <Link to="/posts">Blog</Link>
+//         {" > "}
+//         <BreadcrumbSpan>{params.slug}</BreadcrumbSpan>
+//       </SubduedP>
+//     </BreadcrumbContainerDiv>
+//   ),
+// };
 
 export async function loader({ params }: any) {
   const slug = params.slug;
@@ -64,27 +64,38 @@ export async function loader({ params }: any) {
   };
 }
 
-const ArticleH1 = styled(TitleH1)`
-  max-width: 80%;
-  margin: auto;
+// const ArticleH1 = styled(TitleH1)`
+//   max-width: 80%;
+//   margin: auto;
 
-  @media (max-width: 499px) {
-    max-width: 100%;
-  }
-`;
+//   @media (max-width: 499px) {
+//     max-width: 100%;
+//   }
+// `;
 
 export default function Slug() {
   const post = useLoaderData();
   return (
-    <ArticleContainer>
-      <ArticleH1>{post.title}</ArticleH1>
-      <ArticleImage src={post.image} />
+    // <ArticleContainer>
+    //   <ArticleH1>{post.title}</ArticleH1>
+    //   <ArticleImage src={post.image} />
+
+    //   <div
+    //     className="text-article"
+    //     style={{ margin: "auto" }}
+    //     dangerouslySetInnerHTML={{ __html: post.content }}
+    //   />
+    // </ArticleContainer>
+
+    <div>
+      <h1>{post.title}</h1>
+      <img src={post.image} />
 
       <div
         className="text-article"
         style={{ margin: "auto" }}
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-    </ArticleContainer>
+    </div>
   );
 }

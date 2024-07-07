@@ -1,11 +1,11 @@
 import { Link } from "@remix-run/react";
 import React from "react";
-import { styled } from "styled-components";
-import {
-  FlexColumnDiv,
-  ProductContainerDiv,
-  ProductImage,
-} from "~/styles/styles";
+// import { styled } from "styled-components";
+// import {
+//   FlexColumnDiv,
+//   ProductContainerDiv,
+//   ProductImage,
+// } from "~/styles/styles";
 
 export type ReviewProps = {
   imageUrl: string;
@@ -24,10 +24,10 @@ export const Review = ({
 }: ReviewProps) => {
   return (
     <Link className="link-style-none" prefetch="render" to={`/reviews/${slug}`}>
-      <ProductContainerDiv>
-        <ProductImage src={imageUrl} />
+      <div>
+        <img src={imageUrl} />
         <h1>{title}</h1>
-      </ProductContainerDiv>
+      </div>
     </Link>
   );
 };

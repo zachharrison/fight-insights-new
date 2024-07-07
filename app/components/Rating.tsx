@@ -1,10 +1,12 @@
 import React from "react";
-import { styled } from "styled-components";
-import { DescriptionP } from "~/styles/styles";
+// import { styled } from "styled-components";
+// import { DescriptionP } from "~/styles/styles";
 
 type RatingProps = {
   score: number;
 };
+
+/*
 
 const ContainerDiv = styled.div<{ score: number }>`
   display: flex;
@@ -50,14 +52,34 @@ const InnerCircle = styled.div`
   justify-content: center;
 `;
 
+*/
+
 export const Rating = ({ score }: RatingProps) => {
   return (
-    <ContainerDiv score={score}>
-      <OuterCircle>
-        <InnerCircle>
-          <DescriptionP>{Math.ceil(score * 10)}</DescriptionP>
-        </InnerCircle>
-      </OuterCircle>
+    // <ContainerDiv score={score}>
+    //   <OuterCircle>
+    //     <InnerCircle>
+    //       <DescriptionP>{Math.ceil(score * 10)}</DescriptionP>
+    //     </InnerCircle>
+    //   </OuterCircle>
+    //   <svg
+    //     xmlns="http://www.w3.org/2000/svg"
+    //     version="1.1"
+    //     width="160px"
+    //     height="160px"
+    //   >
+    //     <defs>
+    //       <linearGradient id="GradientColor">
+    //         <stop offset="0%" stopColor="#DA22FF" />
+    //         <stop offset="100%" stopColor="#9733EE" />
+    //       </linearGradient>
+    //     </defs>
+    //     <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+    //   </svg>
+    // </ContainerDiv>
+
+    <div>
+      {score}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -72,6 +94,6 @@ export const Rating = ({ score }: RatingProps) => {
         </defs>
         <circle cx="80" cy="80" r="70" strokeLinecap="round" />
       </svg>
-    </ContainerDiv>
+    </div>
   );
 };

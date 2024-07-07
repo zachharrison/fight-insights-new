@@ -154,7 +154,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* MOBILE STYLES */
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   .mobile-column {
     flex-direction: column;
   }
@@ -163,4 +163,4 @@ body::-webkit-scrollbar-thumb {
     font-size: var(--font-size-regular-mobile) !important;
     padding: var(--padding-small) 0px;
   }
-}
+} */

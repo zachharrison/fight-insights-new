@@ -28,10 +28,13 @@ export default defineConfig(({ command, mode }) => {
             );
           });
         },
-        ignoredRouteFiles: ["**/*"],
+        // ignoredRouteFiles: ["**/*"],
       }),
       netlifyPlugin(),
       tsconfigPaths(),
+      // react({
+      //   include: /\.(jsx|tsx)$/,
+      // }),
       react({
         include: /\.(jsx|tsx)$/,
       }),

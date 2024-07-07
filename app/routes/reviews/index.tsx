@@ -1,28 +1,28 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import React from "react";
-import { styled } from "styled-components";
-import {
-  BreadcrumbContainerDiv,
-  BreadcrumbSpan,
-  CenteredDiv,
-  DescriptionP,
-  FlexStartDiv,
-  ProductContainerDiv,
-  ProductImage,
-  SubduedP,
-} from "~/styles/styles";
+// import { styled } from "styled-components";
+// import {
+//   BreadcrumbContainerDiv,
+//   BreadcrumbSpan,
+//   CenteredDiv,
+//   DescriptionP,
+//   FlexStartDiv,
+//   ProductContainerDiv,
+//   ProductImage,
+//   SubduedP,
+// } from "~/styles/styles";
 
-export const handle = {
-  breadcrumb: () => (
-    <BreadcrumbContainerDiv>
-      <SubduedP>
-        <Link to="/">Home</Link>
-        {" > "}
-        <BreadcrumbSpan>Reviews</BreadcrumbSpan>
-      </SubduedP>
-    </BreadcrumbContainerDiv>
-  ),
-};
+// export const handle = {
+//   breadcrumb: () => (
+//     <BreadcrumbContainerDiv>
+//       <SubduedP>
+//         <Link to="/">Home</Link>
+//         {" > "}
+//         <BreadcrumbSpan>Reviews</BreadcrumbSpan>
+//       </SubduedP>
+//     </BreadcrumbContainerDiv>
+//   ),
+// };
 
 type ProductCategory = {
   key: "boxingShoes" | "gloves" | "accessories";
@@ -57,19 +57,34 @@ export async function loader() {
 export default function Index() {
   const { productCategories } = useLoaderData();
   return (
-    <CenteredDiv gap="20px" padding="var(--padding-large) 0px">
+    // <CenteredDiv gap="20px" padding="var(--padding-large) 0px">
+    //   {productCategories.map((category: ProductCategory) => (
+    //     <Link
+    //       className="link-style-none"
+    //       prefetch="render"
+    //       to={`/reviews/productCategory/${category.key}`}
+    //     >
+    //       <ProductContainerDiv>
+    //         <ProductImage src={category.imageUrl} />
+    //         <h1>{category.title}</h1>
+    //       </ProductContainerDiv>
+    //     </Link>
+    //   ))}
+    // </CenteredDiv>
+
+    <div>
       {productCategories.map((category: ProductCategory) => (
         <Link
           className="link-style-none"
           prefetch="render"
           to={`/reviews/productCategory/${category.key}`}
         >
-          <ProductContainerDiv>
-            <ProductImage src={category.imageUrl} />
+          <div>
+            <img src={category.imageUrl} />
             <h1>{category.title}</h1>
-          </ProductContainerDiv>
+          </div>
         </Link>
       ))}
-    </CenteredDiv>
+    </div>
   );
 }

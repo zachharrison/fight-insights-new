@@ -2,30 +2,31 @@ import { Link, useLoaderData } from "@remix-run/react";
 import React from "react";
 import { Review } from "~/components/ReviewCardView";
 import { client } from "~/lib/apollo";
-import {
-  ArticleContainer,
-  ArticleImage,
-  BreadcrumbContainerDiv,
-  BreadcrumbSpan,
-  FlexStartDiv,
-  SubduedP,
-  TitleH1,
-} from "~/styles/styles";
+// import {
+//   ArticleContainer,
+//   ArticleImage,
+//   BreadcrumbContainerDiv,
+//   BreadcrumbSpan,
+//   FlexStartDiv,
+//   SubduedP,
+//   TitleH1,
+// } from "~/styles/styles";
 import { gql } from "@apollo/client";
 
-export const handle = {
-  breadcrumb: ({ params }: any) => (
-    <BreadcrumbContainerDiv>
-      <SubduedP>
-        <Link to="/">Home</Link>
-        {" > "}
-        <Link to="/reviews">Reviews</Link>
-        {" > "}
-        <BreadcrumbSpan>{params.slug}</BreadcrumbSpan>
-      </SubduedP>
-    </BreadcrumbContainerDiv>
-  ),
-};
+// export const handle = {
+//   breadcrumb: ({ params }: any) => (
+//     <BreadcrumbContainerDiv>
+//       <SubduedP>
+//         <Link to="/">Home</Link>
+//         {" > "}
+//         <Link to="/reviews">Reviews</Link>
+//         {" > "}
+//         <BreadcrumbSpan>{params.slug}</BreadcrumbSpan>
+//       </SubduedP>
+//     </BreadcrumbContainerDiv>
+//   ),
+// };
+
 export async function loader({ params }: any) {
   // const slug = params.slug;
   // const ReviewQuery = gql`
